@@ -1,0 +1,28 @@
+#!/bin/bash
+
+TTL=1000
+
+set -e
+
+while [[ $1 == -* ]]; do
+    if [[ $1 == '-x' ]]; then
+        clear_cache=true
+    fi
+
+    shift 1;
+done
+
+key=$*
+
+[ "$clear_cache" ] && data=$(redis-cli del "$key")
+
+data=$(redis-cli get "$key")
+
+[ "$data" ] && echo "$data" && exit
+
+
+data=$($key)
+redis-cli setex "$key" "$TTL" "$data" > /dev/null
+
+echo "$data"
+
