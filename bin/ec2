@@ -1,0 +1,23 @@
+#!/bin/bash
+
+query=".Reservations[].Instances[] | \
+  { \
+    Name: (.Tags[] | select(.Key == \"Name\") | .Value), \
+    InstanceId: .InstanceId, \
+    InstanceType: .InstanceType, \
+    State: .State.Name, \
+    VpcId: .VpcId, \
+    PublicIp: .NetworkInterfaces[].Association.PublicIp, \
+    PrivateIp: .NetworkInterfaces[].PrivateIpAddress \
+  }"
+
+if [[ $* == *--json* ]]; then
+  aws ec2 describe-instances | jq "$query"
+else
+  aws ec2 describe-instances | jq "$query" |
+    jq -r '.Name + "," + .InstanceId + "," + .InstanceType + "," + .State + "," + .VpcId + "," + .PublicIp + "," + .PrivateIp' |
+    column -t -s ',' |
+    sort
+fi
+
+
