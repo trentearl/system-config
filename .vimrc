@@ -5,7 +5,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'hashivim/vim-terraform'
 Plug 'mxw/vim-jsx'
+Plug 'prettier/vim-prettier'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'leafgarland/typescript-vim'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -51,11 +54,15 @@ nmap <leader>T :NERDTreeClose<cr>
 
 nmap <leader>gb :Gblame<cr>
 nmap <leader>gd :Gvdiff<cr>zR<cr>
+nmap <leader>gl :BCommits<cr>
 
 map <c-k> 10k
 map <c-j> 10j
 
 map <leader>p :GFiles<cr>
+map <leader>P p=`]
+map <leader>b :Buffers<cr>
+map <leader>l :Lines<cr>
 
 noremap <leader>V :e ~/.vimrc<cr>
 map <leader>v :source ~/.vimrc<cr>
