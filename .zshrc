@@ -66,8 +66,6 @@ export EDITOR=vim
 export VISUAL=vim
 
 test -f "$HOME/.config/zsh-init" && source "$HOME/.config/zsh-init"
-alias configgit="/usr/bin/git --git-dir=$HOME/.global-config.git/ --work-tree=$HOME"
-alias linuxconfiggit='/usr/bin/git --git-dir=$HOME/.linuxdotfiles/ --work-tree=$HOME'
 alias rg="rg -g '!*__test__*' -g '!*.log'"
 
 ### Added by Zplugin's installer

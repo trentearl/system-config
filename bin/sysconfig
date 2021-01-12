@@ -1,0 +1,2 @@
+
+git --git-dir=$HOME/.system-config.git/ --work-tree=$HOME "$@"
