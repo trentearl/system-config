@@ -7,7 +7,7 @@ Base configs for my environments
 ## Install
 
 ```
-git clone --bare 'git@github.com:trentearl/system-config.git' "$HOME/.global-config.git"
-git --git-dir="$HOME/.global-config.git" --work-tree="$HOME" checkout
+git clone --bare 'git@github.com:trentearl/system-config.git' "$HOME/.system-config.git"
+git --git-dir="$HOME/.system-config.git" --work-tree="$HOME" checkout
 ```
 
