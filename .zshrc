@@ -71,7 +71,6 @@ test -f "$HOME/.config/zsh-init" && source "$HOME/.config/zsh-init"
 alias rg="rg -g '!*__test__*' -g '!*.log'"
 
 ### Added by Zplugin's installer
-source "$HOME/.zplugin/bin/zplugin.zsh"
 autoload -Uz _zplugin
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 
