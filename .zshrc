@@ -9,6 +9,8 @@ export HISTSIZE=1000000
 export SAVEHIST=10000000
 setopt INC_APPEND_HISTORY
 
+source ~/.zinit/bin/zplugin.zsh
+
 setopt extendedglob
 unsetopt beep
 setopt no_beep
