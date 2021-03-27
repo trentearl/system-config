@@ -1,5 +1,5 @@
 call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'
+Plug 'lifepillar/vim-solarized8'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -22,9 +22,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'rust-lang/rust.vim'
 call plug#end()
 
-silent! colorscheme gruvbox
+silent! colorscheme solarized8_high
 
-set background=dark
+set background=light
 set hlsearch ignorecase
 set showmatch mat=2
 set number
