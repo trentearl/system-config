@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cache curl -s $*
+
