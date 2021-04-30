@@ -1,0 +1,4 @@
+#!/bin/bash
+
+bward $1 | c2
+

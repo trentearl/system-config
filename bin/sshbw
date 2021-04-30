@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd;
+cd - ;
+
+sshpass -p $(bwardpass $1) ssh $2
+

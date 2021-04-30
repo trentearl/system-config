@@ -1,0 +1,21 @@
+#!/bin/bash
+
+SOURCE=/etc/letsencrypt/live/earl.onl
+DEST=/Users/trent/.config/nginx/crypto/earl.onl/
+
+ls $SOURCE |
+   grep pem |
+   xargs -n 1 -I {} cp $SOURCE/{} $DEST
+
+exit
+
+certbot \
+  certonly \
+  --manual \
+  --preferred-challenges=dns \
+  --email t@kilyos.xyz \
+  --agree-tos \
+  -d *.earl.onl \
+  -d *.swa.earl.onl \
+  -d *.cb.earl.onl
+
