@@ -1,0 +1,13 @@
+#!/bin/bash
+
+board_id=$(trelloboards $1)
+
+if [[ ! $board_id ]]; then
+  exit 1;
+fi
+
+trellocurl "/boards/$board_id/lists" |
+  jq -r '.[] | .id + " " + .name' |
+  fzfselect $2 |
+  c1
+

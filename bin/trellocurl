@@ -1,0 +1,15 @@
+#!/bin/bash
+
+KEY="$TRELLO_API_KEY"
+TOKEN="$TRELLO_TOKEN"
+URL='https://api.trello.com/1'
+
+
+path=$1
+
+if [[ ! $path == *"?"* ]]; then
+  path="$path?"
+fi
+
+curl -s --request GET \
+  --url "$URL$path&key=$KEY&token=$TOKEN"

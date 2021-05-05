@@ -1,0 +1,8 @@
+#!/bin/bash
+
+trellocurl /members/me/boards |
+  jq -r '.[] | .id + " " + .name' |
+  fzfselect $* |
+  c1
+
+
