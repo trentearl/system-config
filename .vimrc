@@ -9,6 +9,9 @@ Plug 'prettier/vim-prettier'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'leafgarland/typescript-vim'
+Plug 'othree/yajs.vim'
+Plug 'chr4/nginx.vim'
+
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -24,6 +27,8 @@ call plug#end()
 
 silent! colorscheme solarized8_high
 
+au BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.typescriptreact
+
 set background=light
 set hlsearch ignorecase
 set showmatch mat=2
@@ -33,6 +38,7 @@ set nowrap linebreak
 set smartcase
 set hidden
 set nobackup nowritebackup noswapfile noundofile undolevels=10000
+set re=0
 
 
 let mapleader = "\<space>"
