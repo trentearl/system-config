@@ -60,6 +60,9 @@ export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
 alias py='python'
 alias vbox='VBoxManage'
+alias t='tmux'
+alias g='git'
+alias v='vim'
 
 export IP_CACHE_EXPIRE=180
 export IP_GEO_CACHE_EXPIRE=86400
