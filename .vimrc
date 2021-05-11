@@ -11,7 +11,12 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'leafgarland/typescript-vim'
 Plug 'othree/yajs.vim'
 Plug 'chr4/nginx.vim'
+Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
 
+
+Plug 'pangloss/vim-javascript'    " JavaScript support
+Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
+Plug 'jparise/vim-graphql'        " GraphQL syntax
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -25,15 +30,17 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'rust-lang/rust.vim'
 call plug#end()
 
+let g:coc_global_extensions = [ 'coc-tsserver' ]
+
 silent! colorscheme solarized8_high
 
-au BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.typescriptreact
+"au BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.typescriptreact
 
 set background=light
 set hlsearch ignorecase
 set showmatch mat=2
 set number
-set shiftwidth=4 softtabstop=4 expandtab smarttab cindent autoindent
+set shiftwidth=2 softtabstop=2 expandtab smarttab cindent autoindent
 set nowrap linebreak
 set smartcase
 set hidden
@@ -106,4 +113,3 @@ let g:airline_theme='tomorrow'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_section_z = "%p%% (%l/%L)"
-
