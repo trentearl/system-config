@@ -1,10 +1,12 @@
 call plug#begin('~/.vim/plugged')
+Plug 'ekalinin/Dockerfile.vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'hashivim/vim-terraform'
 Plug 'mxw/vim-jsx'
+Plug 'embear/vim-localvimrc'
 Plug 'prettier/vim-prettier'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'peitalin/vim-jsx-typescript'
@@ -36,11 +38,11 @@ silent! colorscheme solarized8_high
 
 "au BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.typescriptreact
 
+set re=2
 set background=light
 set hlsearch ignorecase
 set showmatch mat=2
 set number
-set shiftwidth=2 softtabstop=2 expandtab smarttab cindent autoindent
 set nowrap linebreak
 set smartcase
 set hidden
@@ -91,7 +93,6 @@ nnoremap <c-l> <c-w><c-l>
 nnoremap <c-n> :bnext<cr>
 nnoremap <c-p> :bprevious<cr>
 nnoremap <c-d> :bd<cr>
-map <c-t> :e ~/Documents/todo<cr>
 
 map <leader>o :set list<cr>
 map <leader>O :set nolist<cr>
@@ -103,7 +104,6 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 highlight Normal ctermbg=None
 
 let g:gitgutter_terminal_reports_focus=0
@@ -113,3 +113,7 @@ let g:airline_theme='tomorrow'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_section_z = "%p%% (%l/%L)"
+let g:localvimrc_ask=0
+
+
+nmap <leader>n :call CocAction('diagnosticNext')<cr>
