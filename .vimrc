@@ -8,12 +8,15 @@ Plug 'hashivim/vim-terraform'
 Plug 'mxw/vim-jsx'
 Plug 'embear/vim-localvimrc'
 Plug 'prettier/vim-prettier'
-Plug 'HerringtonDarkholme/yats.vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'leafgarland/typescript-vim'
 Plug 'othree/yajs.vim'
 Plug 'chr4/nginx.vim'
 Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
+Plug 'sbdchd/neoformat'
+Plug 'neovimhaskell/haskell-vim'
+
 
 
 Plug 'pangloss/vim-javascript'    " JavaScript support
@@ -67,15 +70,15 @@ nmap <leader>r :NERDTreeFind<cr>
 nmap <leader>t :NERDTree<cr>
 nmap <leader>T :NERDTreeClose<cr>
 
-nmap <leader>gb :Gblame<cr>
-nmap <leader>gd :Gvdiff<cr>zR<cr>
-nmap <leader>gl :BCommits<cr>
+nmap <leader>fb :Gblame<cr>
+nmap <leader>fd :Gvdiff<cr>zR<cr>
+nmap <leader>fl :BCommits<cr>
+map <leader>ff :Prettier<cr>
 
 map <c-k> 10k
 map <c-j> 10j
 
 map <leader>p :GFiles<cr>
-map <leader>P p=`]
 map <leader>b :Buffers<cr>
 map <leader>l :Lines<cr>
 
@@ -115,5 +118,33 @@ let g:airline_powerline_fonts = 1
 let g:airline_section_z = "%p%% (%l/%L)"
 let g:localvimrc_ask=0
 
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
-nmap <leader>n :call CocAction('diagnosticNext')<cr>
+
+nnoremap <silent> K :call CocAction('doHover')<CR>
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gr <Plug>(coc-references)
+
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+
+:se nostartofline
+
+nnoremap <silent> <leader>d :<C-u>CocList diagnostics<cr>
+
+nmap <leader>do <Plug>(coc-codeaction)
+
+nmap <leader>rn <Plug>(coc-rename)
+
+nmap <c-w> :w<CR>
+imap <c-w> <Esc>:w<CR>
+inoremap jj <ESC>
+inoremap jk <esc>
+inoremap kj <esc>
+
