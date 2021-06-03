@@ -140,11 +140,16 @@ nnoremap <silent> <leader>d :<C-u>CocList diagnostics<cr>
 
 nmap <leader>do <Plug>(coc-codeaction)
 
-nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>dn <Plug>(coc-rename)
 
 nmap <c-w> :w<CR>
 imap <c-w> <Esc>:w<CR>
 inoremap jj <ESC>
 inoremap jk <esc>
 inoremap kj <esc>
+
+nnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+nnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+inoremap <nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+inoremap <nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
 
